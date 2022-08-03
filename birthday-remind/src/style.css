@@ -3,7 +3,7 @@
 body {
   height: 100vh;
   font-family: 'Lato', sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: rgb(245, 140, 193);
 }
 body,
@@ -25,4 +25,51 @@ body,
 
 .person {
   letter-spacing: 1.5px;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0.5rem 1.2rem;
+}
+.person:last-child {
+  padding-bottom: 1.2rem;
+}
+
+.image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 85px;
+
+  height: 85px;
+  border-radius: 50%;
+  margin: 0px 2rem;
+}
+
+.name {
+  font-weight: bolder;
+}
+
+.btn {
+  border: none;
+  width: 80%;
+  height: 50px;
+  font: inherit;
+  border-radius: 10px;
+  background-image: linear-gradient(45deg, aqua, aquamarine);
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 1rem 0.3rem;
+}
+.btn:hover {
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 255, 255, 0.697),
+    rgba(127, 255, 212, 0.632)
+  );
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn:focus {
+  outline: none;
 }
