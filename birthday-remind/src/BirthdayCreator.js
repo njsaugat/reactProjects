@@ -1,24 +1,6 @@
 import React from 'react';
 import { ReactDOM } from 'react';
 
-// const API_URL = 'https://randomuser.me/api/?results=';
-// const LIMIT_USERS = 5;
-
-// async function getUsers() {
-//   const users = await fetch(API_URL + LIMIT_USERS, {
-//     accept: 'application/json',
-//   });
-//   const { results } = await users.json();
-//   BirthdayGeneratorAll(results);
-// }
-
-// getUsers();
-// function BirthdayGeneratorAll(users) {
-//   users.forEach((user) => {
-//     BirthdayGenerator(user);
-//   });
-// }
-
 function BirthdayGenerator(user) {
   return (
     <div className="people">
