@@ -9,7 +9,6 @@ const truncate = (str, max, suffix) =>
       )}${suffix}`;
 
 export default function GetTour({ tour }) {
-  console.log(tour);
   const [expanded, setExpanded] = useState(false);
 
   // const [tourInfo,setInfo]=useState(tour.info)
@@ -40,6 +39,9 @@ export default function GetTour({ tour }) {
           // );
           console.log(e.target.parentNode.getAttribute('id'));
           e.target.parentNode.remove();
+          if (document.body.querySelectorAll('.tour').length === 0) {
+            return <h2>No tours</h2>;
+          }
         }}
       >
         Not Interested
