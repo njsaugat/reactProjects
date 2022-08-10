@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body,
+.form-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  font-family: 'Muli', sans-serif;
+  overflow-x: hidden;
+  align-items: flex-start;
+  background-color: rgb(224, 251, 251);
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  margin: 2rem;
+  margin-top: 4rem;
+  letter-spacing: 1.5px;
+  width: 100%;
+  text-align: center;
+}
+img {
+  width: 5rem;
+  height: 5rem;
+  transform: rotate(-180deg);
+  border-radius: 120px;
+  object-fit: cover;
+}
+.form-control {
+  margin: 2rem 5px;
+  width: clamp(300px, 650px, 90vw);
+  justify-content: space-between;
+}
+
+.form-control label {
+  font-size: 1.3rem;
+  letter-spacing: 1.2px;
+}
+.form-control input {
+  border: none;
+  background-color: white;
+  width: 12rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  margin: 1px 5px 1px 0.8rem;
+  font: inherit;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+}
+.form-control input:focus {
+  outline: none;
+}
+.form-control .btn {
+  width: 6.5rem;
+  height: 2.5rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(80, 168, 240);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+.form-control .btn:hover {
+  background-color: rgba(80, 168, 240, 0.595);
+  color: black;
+}
+
+.colors {
+  min-height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(223.33px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(96px, 1fr));
+}
+
+.color {
+  padding: 1rem 2rem;
+  margin: 0;
+  /* width: clamp(300px, 300px, 50vw);
+  height: clamp(250px, 250px, 50vw); */
+  /* width: 50vw;
+  height: 150px; */
+}
