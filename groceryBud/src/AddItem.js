@@ -1,8 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
-// import { useEffect } from 'react';
 
 const editIcon = <FontAwesomeIcon icon={faPenToSquare} />;
 const deleteIcon = <FontAwesomeIcon icon={faTrash} />;
@@ -19,7 +18,8 @@ function ShowItemStatus({ message, backgroundColor }) {
   );
 }
 export default function AddItem() {
-  const [items, setItem] = useState([]);
+  const storedItems = JSON.parse(localStorage.getItem('items')); //Json.parse is important
+  const [items, setItem] = useState(storedItems.length > 0 ? storedItems : []);
   const [input, setInput] = useState('');
   const [status, setStatus] = useState(false);
   const [message, setMessage] = useState('');
@@ -27,6 +27,12 @@ export default function AddItem() {
   const [buttonVal, setButtonVal] = useState('Submit');
   const [editButton, setEditButton] = useState(false);
   const [index, setIndex] = useState('');
+
+  //update localstorage when item changes
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(items));
+  }, [items]); //when items state changes do this
+
   function postItem(e) {
     e.preventDefault();
     const inputEl = document.body.querySelector('.form-control input');
@@ -40,7 +46,7 @@ export default function AddItem() {
           ...prevItems[index],
           itemName: input,
         };
-        return prevItems;
+        return [...prevItems]; //this way while editing it was saved
       });
       setEditButton(false);
       setButtonVal('Submit');
@@ -69,6 +75,7 @@ export default function AddItem() {
       setStatus(false);
     }, 3000);
   }
+
   function editItem(e) {
     const editingItemId = e.target.closest('.item').getAttribute('id');
     const index = items.findIndex((item) => item.id === +editingItemId);
@@ -78,6 +85,7 @@ export default function AddItem() {
     setIndex(index);
     setEditButton(true);
   }
+
   function deleteItem(e) {
     const deletingItemId = e.target.closest('.item').getAttribute('id');
     setItem((prevItems) => {
@@ -105,6 +113,7 @@ export default function AddItem() {
           {buttonVal}
         </button>
       </form>
+
       <div className="items">
         {items.map((item) => {
           return (
@@ -119,6 +128,7 @@ export default function AddItem() {
             </div>
           );
         })}
+
         {items.length > 0 ? (
           <div
             className="clear-items"
