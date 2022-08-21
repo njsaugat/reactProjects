@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Routes, Route } from 'react-router-dom';
-import AboutUs from './AboutUs';
+const searchIcon = <FontAwesomeIcon icon={faMagnifyingGlass} />;
 const GetHome = () => {
   return <span className="home">Home</span>;
 };
@@ -17,19 +18,26 @@ const GetLogo = () => {
     </div>
   );
 };
+
+const getSearchedItems = (e) => {
+  if (e.key === 'Enter') {
+    console.log(e.target.value);
+  }
+};
 export default function Navbar() {
   return (
     <>
       <nav className="navbar">
         <Link to="/">{<GetLogo />}</Link>
+        <div className="search">
+          <input type="text" onKeyDown={getSearchedItems} />
+          <span>{searchIcon}</span>
+        </div>
         <div className="right menus">
           <Link to="/">{<GetHome />}</Link>
           <Link to="/about-us">{<GetAboutUs />}</Link>
         </div>
       </nav>
-      {/* <Routes>
-        <Route path="about-us" element={<AboutUs />} />
-      </Routes> */}
     </>
   );
 }
