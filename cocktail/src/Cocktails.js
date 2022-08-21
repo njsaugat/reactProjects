@@ -1,25 +1,35 @@
-import Cocktail from './Cocktail';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import getCocktail from './getCocktail';
+import ShowLoading from './ShowLoading';
 const API_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
-
+const initialSearchTerm = 'a';
 export default function Cocktails() {
   const [cocktails, setCocktails] = useState([]);
-
-  async function getCocktails(letter) {
-    const result = await fetch(API_URL + letter, {
-      accept: 'application/json',
-    });
-    const { drinks } = await result.json();
-    console.log(drinks);
-    setCocktails(drinks);
-  }
+  const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
   useEffect(() => {
-    getCocktails('a');
-  }, []);
+    async function getCocktailsData() {
+      const drinks = await getCocktail(API_URL + searchTerm);
+      setCocktails(drinks);
+    }
+    getCocktailsData();
 
+    const inputEl = document.querySelector('input');
+    inputEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        setSearchTerm(e.target.value);
+        setCocktails([]);
+        e.target.value = '';
+      }
+    });
+  }, [searchTerm]);
+
+  if (cocktails.length === 0) {
+    console.log(12);
+    return <ShowLoading />;
+  }
   return (
     <>
-      {cocktails.length > 0 ? <Cocktail cocktail={cocktails[0]} /> : ''}
       <h1>Cocktails</h1>
       <div className="cocktails">
         {cocktails.map((cocktail) => {
@@ -33,7 +43,9 @@ export default function Cocktails() {
               <h2 className="cocktail-name">{cocktail.strDrink}</h2>
               <div className="cocktail-glass">{cocktail.strGlass}</div>
               <div className="cocktail-type">{cocktail.strAlcoholic}</div>
-              <button className="cocktail-details">Details</button>
+              <Link to={`/cocktail/${cocktail.idDrink}`}>
+                <button className="cocktail-details">Details</button>
+              </Link>
             </div>
           );
         })}
