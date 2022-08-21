@@ -18,7 +18,8 @@ body,
 .cocktail-rows,
 .row,
 .back-home,
-.ingredients {
+.ingredients,
+.search {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,6 +36,9 @@ body {
     rgb(214, 255, 152)
   );
   background-attachment: fixed;
+}
+body a {
+  text-decoration: none;
 }
 
 .container {
@@ -62,6 +66,34 @@ body {
   background-color: rgba(251, 246, 240, 0.464);
   box-shadow: 0px 5px 10px black;
   justify-content: space-between;
+}
+.search {
+  border: 1px solid black;
+  border-radius: 5px;
+  /* justify-self: flex-start; */
+}
+.search input {
+  width: 20rem;
+  padding: 5px 0px;
+  background-color: transparent;
+  padding-left: 5px;
+  font-size: 1rem;
+  border: none;
+  transition: 0.4s ease;
+}
+.search input:focus {
+  outline: none;
+  background-color: rgba(172, 255, 47, 0.205);
+  transform: scale(1.01);
+}
+.search:focus {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.393);
+}
+.search span {
+  background-color: rgba(0, 0, 0, 0.106);
+  font-size: 1.5rem;
+  padding: 0px 5px;
+  height: 100%;
 }
 .navbar div {
   margin: 0px 5vw;
@@ -115,6 +147,12 @@ body {
 @media (max-width: 800px) {
   .cocktail {
     width: 80vw;
+  }
+  .navbar input {
+    width: 12rem;
+  }
+  .navbar .logo {
+    display: none;
   }
 }
 
@@ -190,6 +228,9 @@ button:hover {
 }
 
 @media (max-width: 800px) {
+  .navbar {
+    width: 100%;
+  }
   .cocktail-enitre {
     width: 85vw;
   }
@@ -203,6 +244,10 @@ button:hover {
   .instructions,
   .ingredients-heading {
     align-items: flex-start;
+  }
+  .navbar .right {
+    font-size: 0.8rem;
+    /* padding-right: 5rem; */
   }
 }
 
@@ -242,4 +287,20 @@ button:hover {
 }
 .ingredients span {
   margin-right: 1.5rem;
+}
+.loading {
+  font-size: 10rem;
+  margin-top: 5rem;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
