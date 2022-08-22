@@ -155,6 +155,11 @@ body a {
     display: none;
   }
 }
+@media (max-width: 420px) {
+  .navbar .right {
+    display: none;
+  }
+}
 
 .cocktail img {
   width: 100%;
