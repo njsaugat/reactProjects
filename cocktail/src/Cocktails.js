@@ -14,7 +14,7 @@ export default function Cocktails() {
     }
     getCocktailsData();
 
-    const inputEl = document.querySelector('input');
+    const inputEl = document.body.querySelector('input');
     inputEl.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         setSearchTerm(e.target.value);
@@ -23,18 +23,16 @@ export default function Cocktails() {
       }
     });
   }, [searchTerm]);
-
-  if (cocktails.length === 0) {
-    console.log(12);
+  if (cocktails === null) {
     return <ShowLoading />;
   }
   return (
     <>
       <h1>Cocktails</h1>
       <div className="cocktails">
-        {cocktails.map((cocktail) => {
+        {cocktails.map((cocktail, index) => {
           return (
-            <div className="cocktail">
+            <div className="cocktail" key={index}>
               <img
                 src={cocktail.strDrinkThumb}
                 alt={cocktail.strDrink}
