@@ -3,7 +3,5 @@ export default async function getCocktail(URL) {
     accept: 'application/json',
   });
   const { drinks } = await result.json();
-  console.log(drinks);
-  console.log(drinks);
   return drinks;
 }
