@@ -12,23 +12,20 @@ export default function Cocktail() {
 
   useEffect(() => {
     async function getCocktailData() {
-      console.log(API_URL + params.id);
       const drink = await getCocktail(API_URL + params.id);
-      console.log(drink);
       setCocktail(drink);
     }
     getCocktailData();
   }, [params.id]);
 
-  if (cocktails.length === 0) {
-    console.log(12);
+  if (cocktails === null) {
     return <ShowLoading />;
   }
   return (
     <>
-      {cocktails.map((cocktail) => {
+      {cocktails.map((cocktail, index) => {
         return (
-          <div className="cocktail-enitre">
+          <div className="cocktail-enitre" key={index}>
             <div className="back-home">
               <Link to="/">
                 <button className="cocktail-details btn">Back Home</button>
