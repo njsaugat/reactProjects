@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body,
+.icons,
+.container,
+.content,
+.bottom-content,
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  height: 100vh;
+  font-family: 'Muli', sans-serif;
+  overflow: hidden;
+  /* position: relative; */
+}
+
+#root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+.top,
+.bottom {
+  /* position: absolute; */
+  width: 100vw;
+  height: 50vh;
+}
+.top {
+  background-color: rgb(0, 0, 49);
+  position: absolute;
+  top: 0;
+}
+.bottom {
+  background-color: aliceblue;
+  position: absolute;
+  bottom: 0;
+}
+.container {
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: clamp(300px, 640px, 90vw);
+  height: 25rem;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.301);
+  border-radius: 5px;
+  position: relative;
+}
+.top-content {
+  width: 100%;
+  height: 9rem;
+  background-color: aliceblue;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.305);
+}
+
+.bottom-content {
+  position: relative;
+  flex-direction: column;
+}
+.title {
+  flex-direction: column;
+  padding-top: 2rem;
+}
+.title span {
+  font-size: 1.1rem;
+}
+.heading {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+.image {
+  position: absolute;
+  left: 50%;
+  top: -10%;
+  transform: translate(-50%, -50%);
+}
+.image img {
+  width: 9.5rem;
+  height: 9.5rem;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.343);
+}
+.bottom-content,
+.content {
+  width: 100%;
+}
+.content {
+  flex-direction: column;
+}
+
+.title {
+  width: 100%;
+  height: 10rem;
+}
+.icons {
+  width: 100%;
+  justify-content: space-around;
+  font-size: clamp(1rem, 1.5rem, 2rem);
+  color: #19193684;
+}
+.icons span {
+  cursor: pointer;
+  transition: 0.5s ease;
+  padding: 0rem 2rem;
+}
+.icons span:hover {
+  color: rgb(69, 150, 220);
+}
+
+.btn {
+  margin: 1.5rem 1rem;
+  background-color: rgb(69, 150, 220);
+  color: white;
+  font: inherit;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+.btn:hover {
+  background-color: rgba(69, 150, 220, 0.647);
+}
+.btn:active {
+  transform: scale(0.98);
+}
+/* .container .top-content{
+
+} */
