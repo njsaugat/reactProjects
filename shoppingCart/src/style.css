@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+.container,
+.navbar,
+.totalItems,
+.smartPhone,
+.content,
+.buttons,
+.footer,
+.clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  overflow-x: hidden;
+  align-items: flex-start;
+}
+.container {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.navbar {
+  width: 100vw;
+  justify-content: space-between;
+  padding: 1rem;
+  background-image: linear-gradient(45deg, steelblue, rgb(101, 176, 241));
+}
+.shop-logo {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+.lock {
+  position: relative;
+}
+.lock-icon {
+  font-size: 3rem;
+  color: white;
+}
+.totalItems {
+  position: absolute;
+  left: 50%;
+  top: -22.5%;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background-color: rgb(0, 109, 217);
+  color: white;
+}
+
+.cart-items {
+  margin: 1rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  width: clamp(400px, 750px, 90vw);
+  /* border-bottom: 2px solid rgb(93, 174, 245); */
+}
+.cart-items h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.smartPhones {
+  width: 100%;
+  margin: 1rem;
+  margin-top: 2rem;
+}
+.smartPhone {
+  width: 100%;
+  justify-content: space-around;
+  position: relative;
+}
+.image {
+  width: 15%;
+}
+.image img {
+  width: 5rem;
+  height: auto;
+  object-fit: cover;
+  transform: translateY(10%);
+}
+.content {
+  width: 70%;
+  flex-direction: column;
+  letter-spacing: 1.5px;
+  align-items: flex-start;
+  margin: 1rem 0.25px;
+}
+.content div {
+  margin: 0.5rem 4px;
+}
+.content .smartphone-name {
+  text-transform: capitalize;
+}
+.buttons {
+  width: 10%;
+  flex-direction: column;
+  font-size: 1.4rem;
+}
+
+.btn {
+  border: none;
+  font: inherit;
+  padding: 0.2rem 0.6rem;
+
+  opacity: 0;
+  transition: 0.4s ease;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: capitalize;
+  position: absolute;
+  left: -3%;
+  font-size: 2rem;
+  top: 33%;
+  align-self: flex-end;
+  /* justify-self: flex-start; */
+}
+.smartPhone:hover .btn {
+  opacity: 1;
+  background-color: rgba(255, 176, 176, 0.577);
+  color: red;
+}
+.up-icon,
+.down-icon {
+  color: rgb(59, 158, 244);
+  cursor: pointer;
+  /* width: 5rem; */
+  /* text-align: center; */
+}
+
+.underline {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(93, 174, 245);
+}
+
+.footer {
+  margin: 3rem 0.5rem;
+  justify-content: space-between;
+  letter-spacing: 1.5px;
+  font-weight: bolder;
+}
+
+.clear-cart {
+  /* opacity: 1; */
+  border: 1px solid rgba(145, 0, 0, 0.463);
+  box-shadow: 0px 2px 5px rgba(106, 3, 3, 0.115);
+  padding: 0.5rem 1rem;
+  font: inherit;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: white;
+  color: rgb(155, 0, 0);
+  border-radius: 5px;
+  transition: 0.5s ease;
+}
+.clear-cart:hover {
+  background-color: rgba(255, 0, 0, 0.431);
+  color: rgb(155, 0, 0);
+}
+
+.empty-cart {
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: rgb(5, 78, 142);
+  margin: 3rem;
+}
