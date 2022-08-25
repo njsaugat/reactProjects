@@ -1,6 +1,7 @@
+import Markdown from './Markdown';
 import './style.css';
 function App() {
-  return <div className="App">Project Starter</div>;
+  return <Markdown />;
 }
 
 export default App;
