@@ -61,6 +61,10 @@ export default function RandomPerson() {
         password: person.login.password,
       });
     }
+    // return () => {
+    //   setPerson({});
+    //   setLock(true);
+    // };
   }, [unlocked, person]);
 
   if (JSON.stringify(person) === '{}') {
