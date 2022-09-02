@@ -1,6 +1,7 @@
+import ShowForm from './ShowForm';
 import './style.css';
 function App() {
-  return <div className="App">Project Starter</div>;
+  return <ShowForm />;
 }
 
 export default App;
