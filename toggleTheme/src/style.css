@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body,
+.root-container,
+.container,
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  overflow-x: hidden;
+}
+.root-container {
+  width: 100vw;
+  /* height: 100vh; */
+  transition: 0.4s ease;
+  margin: 0rem;
+}
+.container {
+  margin-top: 5rem;
+  padding: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  width: clamp(300px, 500px, 90vw);
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+.top {
+  width: 100%;
+  justify-content: space-between;
+}
+.top h1 {
+  letter-spacing: 1.5px;
+  font-size: 2.4rem;
+}
+.top button {
+  background-color: rgb(185, 28, 28);
+  font: inherit;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  color: white;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.news {
+  margin-top: 6rem;
+}
+.news h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  letter-spacing: 1.4px;
+  color: rgb(196, 35, 35);
+}
+.individual {
+  margin-bottom: 3rem;
+}
+.date-timeNeed {
+  margin: 0.5rem 0px 1rem 0px;
+  font-style: italic;
+  font-size: 0.9rem;
+}
