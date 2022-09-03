@@ -1,14 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 * {
   box-sizing: border-box;
 }
-body {
-  height: 100vh;
-  font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
+:root {
+  --themecolor: rgba(117, 159, 196, 0.125);
 }
-body {
+body,
+.form-control,
+.topic {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+body {
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  overflow: hidden;
+  background-color: var(--themecolor);
+}
+
+.form-control {
+  flex-direction: column;
+  background-color: white;
+  width: clamp(300px, 500px, 90vw);
+  align-items: flex-start;
+  padding: 2rem;
+  border-radius: 5px;
+}
+.form-control h1 {
+  font-size: 2.4rem;
+  letter-spacing: 2px;
+}
+.topic {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem 0px;
+  width: 100%;
+}
+.topic label {
+  margin: 0.5rem 0px;
+}
+.topic input,
+.topic select {
+  width: 100%;
+  font: inherit;
+  padding: 0.3rem 0.4rem;
+  background-color: var(--themecolor);
+  border: none;
+  border-radius: 5px;
+}
+.topic input:focus,
+.topic select:focus {
+  outline: none;
+}
+
+.start {
+  width: 100%;
+  font: inherit;
+  background-color: orange;
+  border: none;
+  padding: 0.3rem;
+  font-weight: bolder;
+  letter-spacing: 1.2px;
+  border-radius: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
 }
