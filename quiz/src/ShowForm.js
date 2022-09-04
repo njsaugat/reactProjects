@@ -8,8 +8,9 @@ export default function ShowForm({ getDataFromForm }) {
   const totalQuestions = useRef(null);
   const selectedCategory = useRef(null);
   const selectedDifficulty = useRef(null);
+  const formDisplay = useRef(null);
   return (
-    <form action="" className="form-control">
+    <form action="" className="form-control" ref={formDisplay}>
       <h1>Setup Quiz</h1>
       <div className="topic">
         <label htmlFor="numberOfQuestions"> Number of Questions</label>
@@ -40,6 +41,8 @@ export default function ShowForm({ getDataFromForm }) {
             selectedCategory,
             selectedDifficulty,
           });
+          // formDisplay.current.style.display = 'none';
+          formDisplay.current.remove();
         }}
       >
         Start
