@@ -21,11 +21,13 @@ function App() {
     <>
       <ShowForm getDataFromForm={getDataFromForm} />
       {/* {console.log(questions, category, difficulty)} */}
-      <ShowQuestions
-        questions={questions}
-        category={category}
-        difficulty={difficulty}
-      />
+      {questions > 0 && (
+        <ShowQuestions
+          questions={questions}
+          category={category}
+          difficulty={difficulty}
+        />
+      )}
     </>
   );
 }
