@@ -14,7 +14,7 @@ export default function ShowForm({ getDataFromForm }) {
       <h1>Setup Quiz</h1>
       <div className="topic">
         <label htmlFor="numberOfQuestions"> Number of Questions</label>
-        <input type="number" defaultValue={10} ref={totalQuestions} />
+        <input type="number" defaultValue={10} min={1} ref={totalQuestions} />
       </div>
       <div className="topic">
         <label htmlFor="Category">Category</label>
