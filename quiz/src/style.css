@@ -131,13 +131,31 @@ body {
   align-self: flex-end;
   /* margin-right: 1.8rem; */
 }
-
+.state {
+  color: rgb(29, 190, 11);
+  letter-spacing: 1px;
+  align-self: flex-end;
+  padding-right: 1rem;
+}
 .finished-modal {
   flex-direction: column;
-  background-color: rgb(203, 97, 97);
+  background-color: rgb(251, 242, 242);
+  padding: 1rem;
   position: absolute;
   width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 10px;
+  height: 30rem;
+  font-size: 2rem;
+  width: clamp(300px, 500px, 90vw);
+}
+.results {
+  text-align: center;
+}
+.again {
+  width: 30%;
+  font-size: 1rem;
+  margin-top: 3rem;
 }
