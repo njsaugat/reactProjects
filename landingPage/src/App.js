@@ -11,7 +11,7 @@ import './index.css';
 
 function App() {
   return (
-    <div className="bg-black text-white overflow-hidden  p-10 pr-0 md:pl-32">
+    <div className="bg-black text-white overflow-hidden  p-10 pr-0 md:pl-20 lg:pl-32">
       <Navbar />
       <Title />
       <Stats />
