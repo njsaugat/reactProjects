@@ -32,7 +32,12 @@ const Business = () => {
     initialStyle += sellingFactor.id === 2 ? ' ' + computedStyle : '';
     return (
       <div className={initialStyle} key={sellingFactor.id}>
-        <img className=" w-32" src={sellingFactor.image} alt="" srcSet="" />
+        <img
+          className=" md:w-16 md:h-16"
+          src={sellingFactor.image}
+          alt=""
+          srcSet=""
+        />
         <div className="factor">
           <h3>{sellingFactor.title}</h3>
           <span className="text-gray-400">{sellingFactor.content}</span>
