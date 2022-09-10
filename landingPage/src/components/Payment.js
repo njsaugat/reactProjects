@@ -21,8 +21,8 @@ const Payment = () => {
           managing every payment at one go.
         </span>
         <div className="flex my-10 gap-10">
-          <img src={googleStore} alt="" srcset="" />
-          <img src={appleStore} alt="" srcset="" />
+          <img src={googleStore} alt="" srcSet="" />
+          <img src={appleStore} alt="" srcSet="" />
         </div>
       </div>
     </div>
