@@ -38,7 +38,7 @@ const Review = () => {
     let computedStyle = 'bg-gradient-to-b from-gray-600 to-transparent-500';
     initialStyle += recommendation.id === 1 ? ' ' + computedStyle : '';
     return (
-      <div className={initialStyle}>
+      <div className={initialStyle} key={recommendation.id}>
         <div className="quotes">
           <img src={quotes} alt="" srcSet="" />
         </div>
@@ -47,7 +47,7 @@ const Review = () => {
         </div>
         <div className="recommendar flex ">
           <div className="left w-15 h-15 rounded-full mr-5">
-            <img src={recommendation.recommenderImage} alt="" srcset="" />
+            <img src={recommendation.recommenderImage} alt="" srcSet="" />
           </div>
           <div className="right flex flex-col">
             <span>{recommendation.recommendarName}</span>
@@ -78,7 +78,7 @@ const Review = () => {
         {renderRecommendations}
       </div>
       <div className="recommenders w-full my-10 pr-10 md:pr-0 flex justify-center items-center">
-        <img src={recommenders} alt="" srcset="" />
+        <img src={recommenders} alt="" srcSet="" />
       </div>
     </div>
   );
