@@ -16,3 +16,9 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+  overflow-x: hidden;
+}
+.rating {
+  transition: ease-in-out 0.3s;
+}
