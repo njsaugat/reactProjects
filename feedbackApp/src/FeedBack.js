@@ -1,33 +1,29 @@
 import React, { useRef } from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import Ratings from './Ratings';
+import RenderError from './RenderError';
 
 const getRandomNumber = () => Math.floor(Math.random() * 10000);
-//rating  not auto selecetd when editing
-//that input stuff at line 17 is messing the user flow when user first type then give rating
 const FeedBack = ({ reviews, setReviews, editIndex, setEditIndex }) => {
   const [showError, setShowError] = useState('');
   const [selectedReview, setSelectedReview] = useState(0);
 
   const inputRel = useRef(null);
-
-  const RenderError = () => {
-    return <h3 className="text-red-600 tracking-wider">{showError}</h3>;
-  };
-  if (editIndex >= 0) {
-    console.log(editIndex);
-    inputRel.current.value = reviews[editIndex].title;
-    // (() => {
-    //   setSelectedReview(reviews[editIndex].rating);
-    // })();
-  }
+  //if we kept above it would run everytime the component would rerender but keeping in useEffect would run only when editIndex changes
+  useEffect(() => {
+    if (editIndex >= 0) {
+      inputRel.current.value = reviews[editIndex].title;
+      setSelectedReview(reviews[editIndex].rating);
+    }
+  }, [editIndex, reviews]);
 
   return (
     <form
       className="feedback mt-20
      flex flex-col justify-center items-center py-4 rounded-lg bg-slate-200 w-11/12 md:w-1/2 lg:w-2/5"
     >
-      {showError !== '' && <RenderError />}
+      {showError !== '' && <RenderError showError={showError} />}
       <h1 className="font-bold text-2xl m-4">
         How would you rate your service with us?
       </h1>
@@ -43,6 +39,7 @@ const FeedBack = ({ reviews, setReviews, editIndex, setEditIndex }) => {
           className="w-10/12 mr-2 p-1 outline-0 bg-transparent"
           placeholder="Write a review..."
           // value={}
+          // onChange={(}
         ></input>
         <button
           type="submit"
