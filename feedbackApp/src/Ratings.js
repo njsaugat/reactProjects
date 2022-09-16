@@ -4,7 +4,7 @@ import buttonProperties from './buttonProperties';
 
 const ratingsArr = Array.from(Array(10).keys());
 
-const selected = ' bg-slate-800 text-white';
+const selected = '  bg-gradient-to-t  from-orange-400 to-pink-600 text-white';
 
 const Ratings = ({ selectedReview, setSelectedReview }) => {
   const [buttonStyle, setButtonStyle] = useState(buttonProperties);
