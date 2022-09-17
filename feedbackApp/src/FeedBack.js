@@ -8,6 +8,7 @@ const getRandomNumber = () => Math.floor(Math.random() * 10000);
 const FeedBack = ({ reviews, setReviews, editIndex, setEditIndex }) => {
   const [showError, setShowError] = useState('');
   const [selectedReview, setSelectedReview] = useState(0);
+  //to get the reviews in the first load:
 
   const inputRel = useRef(null);
   //if we kept above it would run everytime the component would rerender but keeping in useEffect would run only when editIndex changes
