@@ -7,13 +7,20 @@ import Reviews from './Reviews';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const questionIcon = <FontAwesomeIcon icon={faQuestion} />;
 
 const Container = () => {
-  const [reviews, setReviews] = useState([]);
-  const [editIndex, setEditIndex] = useState(-1);
+  const [reviews, setReviews] = useState(() => {
+    const reviewsItems = JSON.parse(localStorage.getItem('reviews'));
+    return reviewsItems ? reviewsItems : [];
+  });
 
+  const [editIndex, setEditIndex] = useState(-1);
+  useEffect(() => {
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+  }, [reviews]);
   return (
     <div className="flex relative flex-col justify-center items-center  bg-gradient-to-r from-indigo-600 to-blue-900 w-screen min-h-screen overflow-x-hidden">
       <Header />
@@ -31,11 +38,9 @@ const Container = () => {
           setEditIndex={setEditIndex}
         />
       )}
-      <Link to="about">
-        <span className="fixed bottom-5  w-full flex justify-end pr-5 cursor-pointer  text-white">
-          {questionIcon}
-        </span>
-      </Link>
+      <span className="absolute bottom-5  flex  self-end mr-5 mt-4 p-2 cursor-pointer hover:transition-all hover:text-pink-500 text-2xl text-white">
+        <Link to="/about">{questionIcon}</Link>
+      </span>
     </div>
   );
 };
