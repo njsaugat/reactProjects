@@ -6,6 +6,7 @@ import Users from './searchUsers/Users';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ContainerUserProfile from './userProfile/Container';
+import About from './About';
 
 const GithubSearcher = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -30,6 +31,7 @@ function App() {
       <Routes>
         <Route path="/" element={<GithubSearcher />} />
         <Route path="/user" element={<ContainerUserProfile />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );
