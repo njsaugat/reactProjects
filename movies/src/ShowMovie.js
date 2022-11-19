@@ -8,7 +8,12 @@ export default function ShowMovie() {
   return (
     <div className="movie-entire">
       <div className="left-image">
-        <img src={IMAGE_URL + movie.backdrop_path} alt="" srcSet="" />
+        <img
+          src={IMAGE_URL + movie.backdrop_path}
+          alt=""
+          srcSet=""
+          loading="lazy"
+        />
       </div>
       <div className="right-detail">
         <h1>{movie.title}</h1>
